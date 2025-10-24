@@ -1,10 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+} from "react-native";
+import Header from "./components/Header";
+import StoriesList from "./components/StoriesList";
+import PostsList from "./components/PostsList";
+import NavList from "./components/NavList";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Header />
+      <ScrollView>
+        <StoriesList />
+        <PostsList />
+      </ScrollView>
+      <NavList />
+
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +30,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    paddingTop: 54,
+    paddingBottom: 24,
   },
 });
